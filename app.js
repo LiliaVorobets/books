@@ -1,8 +1,7 @@
-const express = require('express');
 const Datastore = require('nedb');
 const path = require('path');
+const express = require('express');
 const app = express();
-const PORT = 4000;
 
 const authorsRoutes = require('./routes/authors');
 const booksRoutes = require('./routes/books');
@@ -17,6 +16,4 @@ app.use('/authors', authorsRoutes);
 app.use(express.static('public'));
 
 
-app.listen(PORT, () => {
-  console.log(`Сервер запущено на http://localhost:${PORT}`);
-});
+module.exports = app;
